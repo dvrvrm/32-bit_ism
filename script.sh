@@ -1,10 +1,11 @@
-echo hello $1
+#changes increment command by add command and decrement command by subtract command and giving binary values to registers
 cat $1 | sed -e 's/inc /add $1,/' -e 's/dec /sub $1,/g' -e 's/%esp/10001/g' -e 's/pc/01111/g' -e 's/%eax/00000/g' -e 's/%ebx/00001/g' -e 's/%ecx/00010/g' -e 's/%edx/00011/g' >> out.txt
 
 cat out.txt | awk -F, 'BEGIN{ FS=" "}
 {OFS=",";print $1,$2}
 ' >> awkout1.txt
 
+#taking care of labels of jump statements
 cat awkout1.txt | awk -F, '
 BEGIN{FS=",";OFS=","}
 /:/{ print "--",$1;}

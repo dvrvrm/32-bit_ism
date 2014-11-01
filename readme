@@ -2,6 +2,6 @@ Made By: Devender Verma
 
 how to run:
 (i) just type :
---- pdflatex simulator.tex
-(ii) then read the commands in the generated pdf file.
+--- sh simulator.sh
+(ii) then read the commands in the generated simulator.pdf file.
 
